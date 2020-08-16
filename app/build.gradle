@@ -9,12 +9,20 @@ android {
 
     defaultConfig {
         applicationId "com.example.mvi"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     buildTypes {
@@ -41,8 +49,8 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2_version"
 
-    // -- Lifecycle Components (ViewModel, LiveData and ReactiveStreams)
-    def lifecycle_version = '2.3.0-alpha06'
+    // -- Lifecycle Components (ViewModel, LiveData and ReactiveStreams)//2.2.0-alpha03
+    def lifecycle_version = '2.2.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
